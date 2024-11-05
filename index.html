@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Left 4 Dead - Fan Page</title>
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     <style>
         /* Estilos básicos de la página */
         body {
@@ -12,7 +13,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://wallpapercave.com/wp/wp1937861.jpg'); /* Fondo oscuro */
             background-size: cover;
         }
 
@@ -124,19 +124,29 @@
         <a href="#" class="action-button">Únete a la Resistencia</a>
     </div>
 
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <df-messenger
+      project-id="proyectobaseconocimiento"
+      agent-id="8f344eba-0ccd-4da9-871f-97c1d8e7f6f5"
+      language-code="es"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+       chat-title="ChatLeftForDead">
+      </df-messenger-chat-bubble>
+    </df-messenger>
     <style>
-        df-messenger {
-          z-index: 999;
-          position: fixed;
-          --df-messenger-font-color: #000;
-          --df-messenger-font-family: Google Sans;
-          --df-messenger-chat-background: #f3f6fc;
-          --df-messenger-message-user-background: #d3e3fd;
-          --df-messenger-message-bot-background: #fff;
-          bottom: 16px;
-          right: 16px;
-        }
-      </style>     
+      df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: Google Sans;
+        --df-messenger-chat-background: #f3f6fc;
+        --df-messenger-message-user-background: #d3e3fd;
+        --df-messenger-message-bot-background: #fff;
+        bottom: 16px;
+        right: 16px;
+      }
+    </style> 
 
 </body> 
 </html>
