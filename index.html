@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./png-clipart-left-4-dead-2-icon-2-left-4-dead-b-left-4-dead-logo-thumbnail.png" type="image/x-icon">
     <title>Left 4 Dead - Fan Page</title>
+    
     <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     <style>
         /* Estilos básicos de la página */
         body {
             background-color: #0d0d0d;
+            background-image: url(./thumb-1920-45880.jpg);
+            background-position: center;
+
             color: #e0e0e0;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,15 +22,16 @@
         }
 
         /* Contenedor principal */
-        .container {
-            background-color: rgba(0, 0, 0, 0.8);
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        }
+            .container {
+                background-color: rgba(0, 0, 0, 0.9); /* Opacidad del 90% */
+                max-width: 900px;
+                margin: auto;
+                padding: 20px;
+                border-radius: 8px;
+                text-align: center;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            }
+
 
         /* Encabezado y subtítulos */
         h1 {
@@ -44,12 +50,17 @@
             margin: 20px 0;
         }
 
+
         .character, .enemy {
-            margin: 10px;
+            margin: 10px; 
             padding: 15px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1); 
             border-radius: 8px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .character:hover, .enemy:hover {
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         .character h3, .enemy h3 {
@@ -70,18 +81,42 @@
             font-size: 1.1em;
             cursor: pointer;
         }
-        .action-button:hover {
-            background-color: #b3241c;
-        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Left 4 Dead - Fan Page</h1>
+        <h1>Left 4 Dead - Manual Básico</h1>
         <p>Bienvenido a la página dedicada a los sobrevivientes y enemigos de Left 4 Dead, un clásico del horror de supervivencia en equipo.</p>
+        <button class="action-button" onclick="abrirChat()">
+            Da clic en el icono de chat para preguntar algo específico 
+            <img src="./arrows-direction-down-2-svgrepo-com.svg" alt="">
+        </button>
+    
+
+        
+        <br><br><br>
 
         <div class="section">
+            <h2>¿Qué preguntarle al chat?</h2>
+
+            <div class="character">
+                <h3>1. Objetivo del juego </h3>
+            </div>
+            <div class="character">
+                <h3>2. Personajes y tipos de zombies</h3>
+            </div>
+            <div class="character">
+                <h3>3. Mecanicas del Juego y armas</h3>
+            </div>
+            <div class="character">
+                <h3>4. Estrategias avanzadas</h3>
+            </div>
+            <div class="character">
+                <h3>5. Consejos</h3>
+            </div>
+            
             <h2>Sobrevivientes</h2>
             <div class="character">
                 <h3>Coach</h3>
@@ -121,17 +156,17 @@
             </div>
         </div>
 
-        <a href="#" class="action-button">Únete a la Resistencia</a>
+        <a href="#" class="action-button">Pídele mas informacion al chat</a>
     </div>
 
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <df-messenger
       project-id="proyectobaseconocimiento"
-      agent-id="8f344eba-0ccd-4da9-871f-97c1d8e7f6f5"
+      agent-id="5b943a9b-3611-4dca-ac1b-5d6b7b20c888"
       language-code="es"
       max-query-length="-1">
       <df-messenger-chat-bubble
-       chat-title="ChatLeftForDead">
+       chat-title="Chat Manual De Left 4 Dead2">
       </df-messenger-chat-bubble>
     </df-messenger>
     <style>
@@ -146,7 +181,31 @@
         bottom: 16px;
         right: 16px;
       }
-    </style> 
+    </style>
+        
+
+    <script>
+        function abrirChat() {
+            // Espera un breve tiempo para que el componente de Dialogflow cargue completamente
+            setTimeout(() => {
+                const messenger = document.querySelector("df-messenger");
+    
+                if (messenger) {
+                    const shadowRoot = messenger.shadowRoot;
+                    const openButton = shadowRoot.querySelector(".df-messenger-toggle-button");
+    
+                    // Verifica que el botón de apertura esté disponible y simula el clic
+                    if (openButton) {
+                        openButton.click();
+                    } else {
+                        console.log("No se encontró el botón del chat.");
+                    }
+                } else {
+                    console.log("No se encontró el componente df-messenger.");
+                }
+            }, 1000); // espera 1 segundo
+        }
+    </script>
 
 </body> 
 </html>
